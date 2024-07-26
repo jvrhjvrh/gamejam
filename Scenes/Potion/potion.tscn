@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd0yrcnq5e3p7"]
+
+[ext_resource type="Texture2D" uid="uid://bqur2i23tnd7p" path="res://Resources/pocaoSeta.png" id="1_t77di"]
+[ext_resource type="Texture2D" uid="uid://bpyxdal0imlhv" path="res://Resources/conteudoPocao.png" id="2_hmqfk"]
+[ext_resource type="Script" path="res://Scenes/Potion/potion.gd" id="2_y5coo"]
+[ext_resource type="Texture2D" uid="uid://sju2n5ehrix7" path="res://Resources/arrow.png" id="3_gfl7x"]
+[ext_resource type="Texture2D" uid="uid://bdepjraqvtkdk" path="res://Resources/Base.png" id="4_nvgs4"]
+[ext_resource type="Texture2D" uid="uid://dsu8rr50fo3gq" path="res://Resources/one.png" id="6_ug4wc"]
+
+[node name="Potion" type="TextureRect" node_paths=PackedStringArray("label", "numberTexture")]
+anchors_preset = -1
+anchor_right = 0.014
+anchor_bottom = 0.025
+offset_right = -16.128
+offset_bottom = -16.2
+texture = ExtResource("1_t77di")
+script = ExtResource("2_y5coo")
+label = NodePath("Control")
+numberTexture = NodePath("Control2/TextureRect")
+
+[node name="pot1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(8, 13)
+scale = Vector2(0.5, 0.125)
+texture = ExtResource("2_hmqfk")
+
+[node name="pot2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(8, 11)
+scale = Vector2(0.5, 0.125)
+texture = ExtResource("2_hmqfk")
+
+[node name="pot3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(8, 9)
+scale = Vector2(0.5, 0.125)
+texture = ExtResource("2_hmqfk")
+
+[node name="pot4" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(8, 6.5)
+scale = Vector2(0.25, 0.1875)
+texture = ExtResource("2_hmqfk")
+
+[node name="Control" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 9.0
+offset_bottom = 12.0
+pivot_offset = Vector2(1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+z_index = 1
+layout_mode = 2
+texture = ExtResource("3_gfl7x")
+expand_mode = 1
+
+[node name="Base" type="TextureRect" parent="Control"]
+layout_mode = 2
+texture = ExtResource("4_nvgs4")
+expand_mode = 1
+
+[node name="Control2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 6.0
+offset_right = 9.0
+offset_bottom = 3.0
+scale = Vector2(1.2, 1.2)
+
+[node name="TextureRect" type="TextureRect" parent="Control2"]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+layout_mode = 0
+offset_right = 2.0
+offset_bottom = 2.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_ug4wc")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Control2"]
+modulate = Color(0.658675, 0.644074, 7.70092e-07, 1)
+layout_mode = 0
+offset_right = 3.0
+offset_bottom = 3.0
+texture = ExtResource("4_nvgs4")
+expand_mode = 1

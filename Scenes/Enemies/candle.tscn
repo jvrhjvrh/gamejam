@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://ch7nqkiddob5i"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/candle.gd" id="1_bspjw"]
+[ext_resource type="Texture2D" uid="uid://c7n8kt3sxio4l" path="res://Resources/velas.png" id="1_soulx"]
+[ext_resource type="PackedScene" uid="uid://r6koqbfie8w1" path="res://Scenes/Light/light.tscn" id="3_18u4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eqq2"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb0y1"]
+atlas = ExtResource("1_soulx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe6je"]
+atlas = ExtResource("1_soulx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjom3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb0y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oe6je")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Candle" type="Area2D" node_paths=PackedStringArray("sprite") groups=["Enemies"]]
+script = ExtResource("1_bspjw")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5eqq2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mjom3")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.292521
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Light" parent="." instance=ExtResource("3_18u4n")]
+scale = Vector2(0.8, 0.8)

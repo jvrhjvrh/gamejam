@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcxe6vc853gne"]
+
+[ext_resource type="Texture2D" uid="uid://qbd7l66ehk1x" path="res://Resources/pocaoCompleta.png" id="1_qsrrg"]
+[ext_resource type="Script" path="res://Scenes/Vial/vial.gd" id="2_5airr"]
+[ext_resource type="Texture2D" uid="uid://bpyxdal0imlhv" path="res://Resources/conteudoPocao.png" id="2_7cdtg"]
+[ext_resource type="Texture2D" uid="uid://sju2n5ehrix7" path="res://Resources/arrow.png" id="3_82nbb"]
+
+[node name="Vial" type="TextureRect" node_paths=PackedStringArray("parts", "arrows")]
+scale = Vector2(2, 2)
+texture = ExtResource("1_qsrrg")
+script = ExtResource("2_5airr")
+parts = [NodePath("VBoxContainer/pot1"), NodePath("VBoxContainer/pot2"), NodePath("VBoxContainer/pot3"), NodePath("VBoxContainer/pot4")]
+arrows = [NodePath("VBoxContainer/pot1/Control/TextureRect2"), NodePath("VBoxContainer/pot2/Control/TextureRect2"), NodePath("VBoxContainer/pot3/Control/TextureRect2"), NodePath("VBoxContainer/pot4/Control/TextureRect2")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+show_behind_parent = true
+layout_mode = 2
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 41.0
+offset_bottom = 67.0
+scale = Vector2(0.31, 0.18)
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="pot4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/pot4"]
+layout_mode = 2
+texture = ExtResource("2_7cdtg")
+
+[node name="Control" type="Control" parent="VBoxContainer/pot4"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/pot4/Control"]
+layout_mode = 2
+offset_right = 16.0
+offset_bottom = 16.0
+pivot_offset = Vector2(8, 8.5)
+texture = ExtResource("3_82nbb")
+
+[node name="pot3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/pot3"]
+layout_mode = 2
+texture = ExtResource("2_7cdtg")
+
+[node name="Control" type="Control" parent="VBoxContainer/pot3"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/pot3/Control"]
+layout_mode = 2
+offset_right = 16.0
+offset_bottom = 16.0
+pivot_offset = Vector2(8, 8.5)
+texture = ExtResource("3_82nbb")
+
+[node name="pot2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/pot2"]
+layout_mode = 2
+texture = ExtResource("2_7cdtg")
+
+[node name="Control" type="Control" parent="VBoxContainer/pot2"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/pot2/Control"]
+layout_mode = 2
+offset_right = 16.0
+offset_bottom = 16.0
+pivot_offset = Vector2(8, 8.5)
+texture = ExtResource("3_82nbb")
+
+[node name="pot1" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/pot1"]
+layout_mode = 2
+texture = ExtResource("2_7cdtg")
+
+[node name="Control" type="Control" parent="VBoxContainer/pot1"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/pot1/Control"]
+layout_mode = 2
+offset_right = 16.0
+offset_bottom = 16.0
+pivot_offset = Vector2(8, 8.5)
+texture = ExtResource("3_82nbb")

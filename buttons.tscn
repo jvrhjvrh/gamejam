@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bobum71pducph"]
+
+[node name="Label" type="Label"]
+offset_left = 4.0
+offset_top = 216.0
+offset_right = 247.0
+offset_bottom = 351.0
+theme_override_font_sizes/font_size = 10
+text = "WASD - Move/Aim
+1,2,3,4 or arrow keys - Mix potion
+Space - Start aiming/Throw potion
+Escape - Discard potion/Stop aiming
+Enter - Pass turn
+R - Reset Level"

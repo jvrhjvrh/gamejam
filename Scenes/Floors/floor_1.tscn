@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://bt8c6tsy6ucyb"]
+
+[ext_resource type="PackedScene" uid="uid://bj6bk8ohe6yi" path="res://Scenes/Player/Player.tscn" id="1_72wnj"]
+[ext_resource type="TileSet" uid="uid://53lf3kkt5a7x" path="res://Scenes/Floors/tileMap.tres" id="2_fe5fg"]
+[ext_resource type="PackedScene" uid="uid://cpqew1ys754ec" path="res://Scenes/Shadow/shadow.tscn" id="3_dl6qm"]
+[ext_resource type="PackedScene" uid="uid://fxxcl35yh3st" path="res://Scenes/Stairs/stairs.tscn" id="4_miey1"]
+[ext_resource type="PackedScene" uid="uid://cqiyqsw3jhhxo" path="res://Scenes/Floors/floor_2.tscn" id="4_nxlje"]
+[ext_resource type="PackedScene" uid="uid://ch7nqkiddob5i" path="res://Scenes/Enemies/candle.tscn" id="5_y6bt3"]
+[ext_resource type="PackedScene" uid="uid://b3y1brnw4py8y" path="res://Scenes/Potion/potionArray.tscn" id="6_f00ap"]
+[ext_resource type="PackedScene" uid="uid://dcxe6vc853gne" path="res://Scenes/Vial/vial.tscn" id="7_cjoyt"]
+[ext_resource type="PackedScene" uid="uid://bobum71pducph" path="res://buttons.tscn" id="9_uhivi"]
+[ext_resource type="PackedScene" uid="uid://be6vox56q5sgu" path="res://Scenes/TurnCount/turnCount.tscn" id="10_hxvw0"]
+
+[node name="Floor1" type="Node2D"]
+self_modulate = Color(0, 0, 0, 1)
+
+[node name="Vial" parent="." instance=ExtResource("7_cjoyt")]
+offset_left = 896.0
+offset_top = 392.0
+offset_right = 912.0
+offset_bottom = 408.0
+scale = Vector2(10, 10)
+
+[node name="PotionArray" parent="." instance=ExtResource("6_f00ap")]
+offset_left = 824.0
+offset_top = 48.0
+offset_right = 824.0
+offset_bottom = 48.0
+scale = Vector2(8, 8)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 232.0
+offset_right = 341.0
+offset_bottom = 419.0
+rotation = -0.523598
+theme_override_font_sizes/font_size = 25
+text = "Careful!!!!
+Light destroys all shadows it touches and all connected shadows"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Node2D" type="Node2D" parent="." groups=["main"]]
+scale = Vector2(4, 4)
+
+[node name="Player" parent="Node2D" instance=ExtResource("1_72wnj")]
+position = Vector2(176, 138)
+
+[node name="TileMap" type="TileMap" parent="Node2D"]
+position = Vector2(72, 2)
+tile_set = ExtResource("2_fe5fg")
+format = 2
+layer_0/tile_data = PackedInt32Array(131073, 655360, 805306368, 196609, 655360, 805306368, 262145, 655360, 805306368, 327681, 655360, 805306368, 393217, 655360, 805306368, 458753, 655360, 805306368, 524289, 655360, 805306368, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 524290, 0, 0, 589826, 655360, 1342177280, 131075, 0, 0, 196611, 524288, 0, 262147, 196608, 0, 327683, 196608, 0, 393219, 196608, 0, 458755, 589824, 0, 524291, 0, 0, 589827, 655360, 1342177280, 131076, 0, 0, 196612, 458752, 0, 262148, 131072, 0, 327684, 131072, 0, 393220, 131072, 0, 458756, 393216, 0, 524292, 0, 0, 589828, 655360, 1342177280, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 655360, 1342177280, 65542, 655360, 0, 131078, 655360, 0, 196614, 655360, 0, 262150, 655360, 0, 327686, 655360, 0, 393222, 655360, 0, 458754, 0, 0, 65541, 0, 0, 5, 655360, 1610612736, 458758, 655360, 0, 524295, 655360, 0, 589830, 655360, 1342177280, 524294, 0, 805306368, 458759, 786432, 0, 589831, 786432, 1342177280, 589825, 786432, 805306368, 65537, 786432, 1610612736, 4, 786432, 1610612736, 6, 786432, 0)
+layer_1/tile_data = PackedInt32Array(65540, 655360, 1610612736, 458758, 655360, 1610612736)
+layer_2/tile_data = PackedInt32Array(65540, 655360, 805306368, 65539, 655360, 1610612736, 65538, 655360, 1610612736, 458758, 851968, 0)
+layer_3/tile_data = PackedInt32Array(65540, 851968, 1610612736)
+
+[node name="Stairs" parent="Node2D" instance=ExtResource("4_miey1")]
+position = Vector2(160, 26)
+load = ExtResource("4_nxlje")
+
+[node name="Candle" parent="Node2D" instance=ExtResource("5_y6bt3")]
+position = Vector2(160, 74)
+
+[node name="Shadow" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(176, 138)
+
+[node name="Shadow2" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(160, 138)
+
+[node name="Shadow3" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(144, 138)
+
+[node name="Shadow4" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(128, 138)
+
+[node name="Shadow5" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(112, 138)
+
+[node name="Shadow6" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(112, 122)
+
+[node name="Shadow7" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(112, 106)
+
+[node name="Shadow8" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(112, 90)
+
+[node name="Shadow9" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(128, 74)
+
+[node name="Shadow10" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(112, 42)
+
+[node name="Shadow11" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(160, 26)
+
+[node name="Shadow12" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(144, 42)
+
+[node name="Shadow13" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(144, 58)
+
+[node name="Shadow14" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(144, 74)
+
+[node name="Shadow16" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(144, 90)
+
+[node name="Shadow15" parent="Node2D" instance=ExtResource("3_dl6qm")]
+position = Vector2(128, 58)
+
+[node name="Label2" parent="." instance=ExtResource("9_uhivi")]
+offset_left = 8.0
+offset_top = 472.0
+offset_right = 286.0
+offset_bottom = 625.0
+theme_override_font_sizes/font_size = 16
+
+[node name="TurnCount" parent="." instance=ExtResource("10_hxvw0")]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 33.0
+offset_bottom = 47.0

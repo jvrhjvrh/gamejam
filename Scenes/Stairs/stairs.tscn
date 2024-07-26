@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://fxxcl35yh3st"]
+
+[ext_resource type="Script" path="res://Scenes/Stairs/stairs.gd" id="1_8tpaw"]
+[ext_resource type="Texture2D" uid="uid://b0ipr3y34ryml" path="res://Resources/Stairs.png" id="1_vauck"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4bkx"]
+size = Vector2(16, 16)
+
+[node name="Stairs" type="Area2D"]
+z_index = 100
+script = ExtResource("1_8tpaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t4bkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vauck")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

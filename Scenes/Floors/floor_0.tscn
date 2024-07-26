@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://fvdewwpxsveb"]
+
+[ext_resource type="TileSet" uid="uid://53lf3kkt5a7x" path="res://Scenes/Floors/tileMap.tres" id="1_0ckqy"]
+[ext_resource type="PackedScene" uid="uid://bj6bk8ohe6yi" path="res://Scenes/Player/Player.tscn" id="2_52ghj"]
+[ext_resource type="PackedScene" uid="uid://fxxcl35yh3st" path="res://Scenes/Stairs/stairs.tscn" id="3_vg2d2"]
+[ext_resource type="PackedScene" uid="uid://cpqew1ys754ec" path="res://Scenes/Shadow/shadow.tscn" id="4_3ers6"]
+[ext_resource type="PackedScene" uid="uid://bt8c6tsy6ucyb" path="res://Scenes/Floors/floor_1.tscn" id="4_m4avo"]
+[ext_resource type="PackedScene" uid="uid://dcxe6vc853gne" path="res://Scenes/Vial/vial.tscn" id="6_w3175"]
+[ext_resource type="PackedScene" uid="uid://b3y1brnw4py8y" path="res://Scenes/Potion/potionArray.tscn" id="7_vv50f"]
+[ext_resource type="PackedScene" uid="uid://bobum71pducph" path="res://buttons.tscn" id="8_8qd3l"]
+[ext_resource type="PackedScene" uid="uid://be6vox56q5sgu" path="res://Scenes/TurnCount/turnCount.tscn" id="9_1ug3k"]
+
+[node name="Floor0" type="Node2D"]
+
+[node name="Vial" parent="." instance=ExtResource("6_w3175")]
+offset_left = 896.0
+offset_top = 472.0
+offset_right = 912.0
+offset_bottom = 488.0
+scale = Vector2(8, 8)
+
+[node name="PotionArray" parent="." instance=ExtResource("7_vv50f")]
+offset_left = 848.0
+offset_top = 216.0
+offset_right = 848.0
+offset_bottom = 216.0
+scale = Vector2(6, 6)
+
+[node name="Label" parent="." instance=ExtResource("8_8qd3l")]
+offset_left = 16.0
+offset_top = 456.0
+offset_right = 280.0
+offset_bottom = 591.0
+theme_override_font_sizes/font_size = 14
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 176.0
+offset_right = 648.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 25
+text = "Get to the stairs to go to the next level!"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 808.0
+offset_top = 40.0
+offset_right = 1080.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 20
+text = "You can mix potions to extend shadows, but you can't grow your own shadow!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Node2D" type="Node2D" parent="." groups=["main"]]
+scale = Vector2(2, 2)
+
+[node name="TileMap" type="TileMap" parent="Node2D"]
+position = Vector2(16, 52)
+tile_set = ExtResource("1_0ckqy")
+format = 2
+layer_0/tile_data = PackedInt32Array(393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 327681, 655360, 1610612736, 327682, 655360, 1610612736, 327683, 655360, 1610612736, 327684, 655360, 1610612736, 327685, 655360, 1610612736, 327686, 655360, 1610612736, 327687, 655360, 1610612736, 327688, 655360, 1610612736, 327689, 655360, 1610612736, 458753, 655360, 1342177280, 458754, 655360, 1342177280, 458755, 655360, 1342177280, 458756, 655360, 1342177280, 458757, 655360, 1342177280, 458758, 655360, 1342177280, 458759, 655360, 1342177280, 458760, 655360, 1342177280, 458761, 655360, 1342177280, 524298, 655360, 1342177280, 524299, 655360, 1342177280, 524300, 655360, 1342177280, 458765, 655360, 1342177280, 458766, 655360, 1342177280, 458767, 655360, 1342177280, 458768, 655360, 1342177280, 458769, 655360, 1342177280, 458770, 655360, 1342177280, 458771, 655360, 1342177280, 458772, 655360, 1342177280, 458773, 655360, 1342177280, 458774, 655360, 1342177280, 393239, 655360, 0, 327693, 655360, 1610612736, 327694, 655360, 1610612736, 327695, 655360, 1610612736, 327696, 655360, 1610612736, 327697, 655360, 1610612736, 327698, 655360, 1610612736, 327699, 655360, 1610612736, 327700, 655360, 1610612736, 327701, 655360, 1610612736, 327702, 655360, 1610612736, 262154, 655360, 1610612736, 262155, 655360, 1610612736, 262156, 655360, 1610612736, 393216, 655360, 805306368, 393227, 655360, 805306368, 262157, 786432, 0, 262153, 786432, 1610612736, 524297, 786432, 805306368, 524301, 786432, 1342177280, 458775, 786432, 1342177280, 327703, 786432, 0, 327680, 786432, 1610612736, 458752, 786432, 805306368)
+layer_1/tile_data = PackedInt32Array(393227, 655360, 1342177280, 327693, 655360, 0, 458765, 655360, 0, 327689, 655360, 805306368, 458761, 655360, 805306368)
+layer_2/tile_data = PackedInt32Array()
+layer_3/tile_data = PackedInt32Array(393227, 655360, 1610612736)
+layer_4/tile_data = PackedInt32Array(393227, 655360, 0)
+layer_5/tile_data = PackedInt32Array(393227, 851968, 0)
+layer_6/tile_data = PackedInt32Array(393227, 851968, 1342177280)
+layer_7/tile_data = PackedInt32Array(393227, 851968, 805306368)
+layer_8/tile_data = PackedInt32Array(393227, 851968, 1610612736)
+
+[node name="Player" parent="Node2D" instance=ExtResource("2_52ghj")]
+position = Vector2(40, 156)
+
+[node name="Stairs" parent="Node2D" instance=ExtResource("3_vg2d2")]
+position = Vector2(376, 156)
+load = ExtResource("4_m4avo")
+
+[node name="Shadow" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(40, 156)
+
+[node name="Shadow2" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(56, 156)
+
+[node name="Shadow3" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(72, 156)
+
+[node name="Shadow4" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(88, 156)
+
+[node name="Shadow5" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(104, 156)
+
+[node name="Shadow6" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(120, 156)
+
+[node name="Shadow7" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(136, 156)
+
+[node name="Shadow8" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(152, 156)
+
+[node name="Shadow9" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(216, 156)
+
+[node name="Shadow10" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(216, 140)
+
+[node name="Shadow11" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(376, 156)
+
+[node name="Shadow12" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(360, 156)
+
+[node name="Shadow13" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(344, 156)
+
+[node name="Shadow14" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(328, 156)
+
+[node name="Shadow15" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(312, 156)
+
+[node name="Shadow16" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(296, 156)
+
+[node name="Shadow17" parent="Node2D" instance=ExtResource("4_3ers6")]
+position = Vector2(280, 156)
+
+[node name="TurnCount" parent="." instance=ExtResource("9_1ug3k")]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 33.0
+offset_bottom = 47.0

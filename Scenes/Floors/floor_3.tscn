@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://4ki0ue7hsr2y"]
+
+[node name="Floor3" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 288.0
+offset_top = 256.0
+offset_right = 634.0
+offset_bottom = 279.0
+text = "Thanks for playing, please send me feedback"

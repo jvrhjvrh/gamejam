@@ -1,0 +1,200 @@
+[gd_scene load_steps=11 format=3 uid="uid://cqiyqsw3jhhxo"]
+
+[ext_resource type="TileSet" uid="uid://53lf3kkt5a7x" path="res://Scenes/Floors/tileMap.tres" id="1_cseiq"]
+[ext_resource type="PackedScene" uid="uid://bj6bk8ohe6yi" path="res://Scenes/Player/Player.tscn" id="2_734qj"]
+[ext_resource type="PackedScene" uid="uid://cpqew1ys754ec" path="res://Scenes/Shadow/shadow.tscn" id="3_2wfex"]
+[ext_resource type="PackedScene" uid="uid://ch7nqkiddob5i" path="res://Scenes/Enemies/candle.tscn" id="4_jsgv3"]
+[ext_resource type="PackedScene" uid="uid://fxxcl35yh3st" path="res://Scenes/Stairs/stairs.tscn" id="5_mcvfr"]
+[ext_resource type="PackedScene" uid="uid://b3y1brnw4py8y" path="res://Scenes/Potion/potionArray.tscn" id="6_1yut6"]
+[ext_resource type="PackedScene" uid="uid://4ki0ue7hsr2y" path="res://Scenes/Floors/floor_3.tscn" id="6_kepfn"]
+[ext_resource type="PackedScene" uid="uid://dcxe6vc853gne" path="res://Scenes/Vial/vial.tscn" id="7_5l2we"]
+[ext_resource type="PackedScene" uid="uid://bobum71pducph" path="res://buttons.tscn" id="9_p53ec"]
+[ext_resource type="PackedScene" uid="uid://be6vox56q5sgu" path="res://Scenes/TurnCount/turnCount.tscn" id="10_amnij"]
+
+[node name="Floor2" type="Node2D"]
+
+[node name="PotionArray" parent="." instance=ExtResource("6_1yut6")]
+offset_left = 720.0
+offset_top = 88.0
+offset_right = 720.0
+offset_bottom = 88.0
+scale = Vector2(8, 8)
+
+[node name="Vial" parent="." instance=ExtResource("7_5l2we")]
+offset_left = 792.0
+offset_top = 368.0
+offset_right = 808.0
+offset_bottom = 384.0
+scale = Vector2(10, 10)
+
+[node name="Label" parent="." instance=ExtResource("9_p53ec")]
+offset_left = 8.0
+offset_top = 472.0
+offset_right = 286.0
+offset_bottom = 625.0
+theme_override_font_sizes/font_size = 16
+
+[node name="Node2D" type="Node2D" parent="." groups=["main"]]
+scale = Vector2(2, 2)
+
+[node name="TileMap" type="TileMap" parent="Node2D"]
+position = Vector2(0, -168)
+tile_set = ExtResource("1_cseiq")
+format = 2
+layer_0/tile_data = PackedInt32Array(983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 917509, 0, 0, 851973, 0, 0, 786437, 0, 0, 786438, 655360, 805306368, 851974, 655360, 805306368, 917510, 655360, 805306368, 786436, 655360, 805306368, 851972, 655360, 805306368, 917508, 655360, 805306368, 917507, 655360, 1610612736, 983042, 655360, 805306368, 1048579, 655360, 1342177280, 1048580, 655360, 1342177280, 1048581, 655360, 1342177280, 1048582, 655360, 1342177280, 1048583, 655360, 1342177280, 1048584, 655360, 1342177280, 1048585, 655360, 1342177280, 720901, 655360, 1610612736, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1310728, 0, 0, 1376264, 0, 0, 1441800, 0, 0, 1310729, 655360, 1342177280, 1310726, 655360, 1342177280, 1310727, 655360, 1342177280, 1245186, 655360, 805306368, 1179651, 655360, 1610612736, 1179652, 655360, 1610612736, 1179653, 655360, 1610612736, 1179654, 655360, 1610612736, 1179655, 655360, 1610612736, 1179656, 655360, 1610612736, 1179657, 655360, 1610612736, 1507336, 655360, 1342177280, 1507337, 786432, 1342177280, 1507335, 786432, 805306368, 1179650, 786432, 1610612736, 786447, 655360, 0, 851983, 655360, 0, 917519, 655360, 0, 983055, 0, 0, 1048591, 655360, 1342177280, 1179663, 655360, 1610612736, 1245199, 0, 0, 1310735, 655360, 1342177280, 1507343, 786432, 1342177280, 720907, 655360, 1610612736, 786443, 0, 0, 851979, 0, 0, 917515, 0, 0, 983051, 0, 0, 1048587, 655360, 1342177280, 1179659, 655360, 1610612736, 1245195, 0, 0, 1310731, 0, 0, 1376267, 0, 0, 1441803, 0, 0, 1507339, 655360, 1342177280, 786444, 655360, 0, 851980, 655360, 0, 917516, 655360, 0, 983052, 0, 0, 1048588, 655360, 1342177280, 1179660, 655360, 1610612736, 1245196, 0, 0, 1310732, 655360, 1342177280, 1507340, 786432, 1342177280, 786445, 655360, 805306368, 851981, 655360, 805306368, 917517, 655360, 805306368, 983053, 0, 0, 1048589, 655360, 1342177280, 1179661, 655360, 1610612736, 1245197, 0, 0, 1310733, 655360, 1342177280, 1507341, 786432, 805306368, 720910, 655360, 1610612736, 786446, 0, 0, 851982, 0, 0, 917518, 0, 0, 983054, 0, 0, 1048590, 655360, 1342177280, 1179662, 655360, 1610612736, 1245198, 0, 0, 1310734, 0, 0, 1376270, 0, 0, 1441806, 0, 0, 1507342, 655360, 1342177280, 1245194, 0, 0, 983050, 0, 0, 1048586, 655360, 1342177280, 917514, 655360, 1610612736, 851978, 655360, 805306368, 786442, 655360, 805306368, 1179658, 655360, 1610612736, 1310730, 655360, 1342177280, 1441802, 655360, 805306368, 1376266, 655360, 805306368, 1507338, 786432, 805306368, 917521, 655360, 1610612736, 983057, 0, 0, 1048593, 0, 0, 1114129, 0, 0, 1179665, 0, 0, 1245201, 0, 0, 1310737, 655360, 1342177280, 983058, 655360, 0, 1048594, 655360, 0, 1114130, 655360, 0, 1179666, 655360, 0, 1245202, 655360, 0, 1310738, 786432, 1342177280, 917520, 655360, 1610612736, 983056, 0, 0, 1048592, 655360, 1342177280, 1114128, 655360, 805306368, 1179664, 655360, 1610612736, 1245200, 0, 0, 1310736, 655360, 1342177280, 786439, 0, 0, 851975, 0, 0, 917511, 0, 0, 786440, 655360, 0, 851976, 655360, 0, 917512, 655360, 0, 720903, 655360, 1610612736, 917513, 655360, 1610612736, 1507332, 786432, 1342177280, 1507330, 786432, 805306368, 1441795, 0, 0, 1507331, 655360, 1342177280, 1310723, 0, 0, 1376259, 0, 0, 1310725, 655360, 1342177280, 1310724, 655360, 1342177280)
+layer_1/tile_data = PackedInt32Array(917510, 655360, 1610612736, 917508, 655360, 1610612736, 1310727, 655360, 805306368, 1376263, 655360, 805306368, 1441799, 655360, 805306368, 1310729, 655360, 0, 1376265, 655360, 0, 1441801, 655360, 0, 917516, 655360, 1610612736, 1310732, 655360, 0, 1376268, 655360, 0, 1441804, 655360, 0, 917517, 655360, 1610612736, 1310733, 655360, 805306368, 1376269, 655360, 805306368, 1441805, 655360, 805306368, 720911, 786432, 0, 917519, 655360, 1610612736, 1310735, 655360, 0, 1376271, 655360, 0, 1441807, 655360, 0, 1310730, 655360, 805306368, 917514, 655360, 805306368, 1048592, 655360, 805306368, 1179664, 655360, 805306368, 917512, 655360, 1610612736, 851974, 655360, 0, 786438, 655360, 0, 720902, 786432, 1610612736, 1376260, 655360, 0, 1441796, 655360, 0, 1310722, 655360, 805306368, 1376258, 655360, 805306368, 1441794, 655360, 805306368, 1310724, 655360, 0)
+layer_2/tile_data = PackedInt32Array(1048578, 786432, 805306368, 917506, 786432, 1610612736, 720900, 786432, 1610612736, 720903, 786432, 1610612736, 917510, 655360, 0, 917508, 851968, 1610612736, 1310729, 851968, 1342177280, 1310727, 851968, 805306368, 720906, 786432, 1610612736, 917514, 851968, 1610612736, 1310730, 851968, 805306368, 720908, 786432, 0, 917516, 851968, 0, 1310732, 851968, 1342177280, 720909, 786432, 1610612736, 917517, 851968, 1610612736, 1310733, 851968, 805306368, 1310735, 851968, 1342177280, 917522, 786432, 0, 720904, 786432, 0, 720902, 786432, 0, 1310724, 851968, 1342177280)
+layer_3/tile_data = PackedInt32Array(917510, 851968, 0)
+layer_4/tile_data = PackedInt32Array(917510, 851968, 1610612736)
+
+[node name="Player" parent="Node2D" instance=ExtResource("2_734qj")]
+z_index = 11
+position = Vector2(56, 80)
+
+[node name="Candle" parent="Node2D" instance=ExtResource("4_jsgv3")]
+position = Vector2(280, 80)
+
+[node name="Shadow" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(56, 80)
+
+[node name="Shadow18" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(56, 144)
+
+[node name="Shadow19" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(72, 144)
+
+[node name="Shadow20" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(88, 144)
+
+[node name="Shadow22" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(56, 176)
+
+[node name="Shadow23" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(56, 192)
+
+[node name="Shadow24" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(104, 144)
+
+[node name="Shadow25" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(120, 144)
+
+[node name="Shadow26" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(136, 144)
+
+[node name="Shadow27" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(152, 144)
+
+[node name="Shadow28" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(168, 144)
+
+[node name="Shadow29" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(184, 144)
+
+[node name="Shadow30" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(200, 144)
+
+[node name="Shadow31" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(216, 144)
+
+[node name="Shadow32" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(232, 144)
+
+[node name="Shadow33" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(136, 176)
+
+[node name="Shadow34" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(136, 192)
+
+[node name="Shadow2" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(72, 80)
+
+[node name="Shadow3" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(88, 80)
+
+[node name="Shadow4" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(104, 80)
+
+[node name="Shadow5" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(120, 80)
+
+[node name="Shadow6" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(136, 80)
+
+[node name="Shadow7" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(152, 80)
+
+[node name="Shadow8" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(168, 80)
+
+[node name="Shadow9" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(184, 80)
+
+[node name="Shadow10" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(200, 80)
+
+[node name="Shadow11" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(216, 80)
+
+[node name="Shadow12" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(232, 80)
+
+[node name="Shadow13" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(88, 64)
+
+[node name="Shadow14" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(88, 48)
+
+[node name="Shadow15" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(88, 32)
+
+[node name="Shadow16" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(120, 48)
+
+[node name="Shadow35" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(184, 48)
+
+[node name="Shadow36" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(184, 32)
+
+[node name="Shadow37" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(232, 32)
+
+[node name="Shadow38" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(232, 48)
+
+[node name="Shadow39" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(280, 96)
+
+[node name="Shadow40" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(280, 112)
+
+[node name="Shadow41" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(280, 128)
+
+[node name="Shadow42" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(232, 176)
+
+[node name="Shadow43" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(232, 192)
+
+[node name="Shadow44" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(184, 192)
+
+[node name="Shadow45" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(184, 176)
+
+[node name="Shadow17" parent="Node2D" instance=ExtResource("3_2wfex")]
+position = Vector2(120, 32)
+
+[node name="Stairs" parent="Node2D" instance=ExtResource("5_mcvfr")]
+position = Vector2(56, 144)
+load = ExtResource("6_kepfn")
+
+[node name="Candle2" parent="Node2D" instance=ExtResource("4_jsgv3")]
+position = Vector2(280, 144)
+
+[node name="TurnCount" parent="." instance=ExtResource("10_amnij")]
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 65.0
+offset_bottom = 71.0

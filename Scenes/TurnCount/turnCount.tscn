@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://be6vox56q5sgu"]
+
+[ext_resource type="Script" path="res://Scenes/TurnCount/turnCount.gd" id="1_bb8hb"]
+
+[node name="TurnCount" type="Label"]
+script = ExtResource("1_bb8hb")

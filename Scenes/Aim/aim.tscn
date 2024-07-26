@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv7kqeoipta8e"]
+
+[ext_resource type="Texture2D" uid="uid://d0l7b4d0sk8he" path="res://Resources/mira.png" id="1_083wc"]
+[ext_resource type="Script" path="res://Scenes/Aim/aim.gd" id="1_w3lqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bi2yj"]
+
+[node name="Aim" type="Area2D" node_paths=PackedStringArray("sprite", "raycast")]
+z_index = 2000
+script = ExtResource("1_w3lqh")
+sprite = NodePath("Sprite2D")
+raycast = NodePath("RayCast2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_083wc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_bi2yj")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
